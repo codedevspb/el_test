@@ -48,19 +48,19 @@ class BookItem(Resource):
     @api.marshal_with(book)
     def get(self, id):
         """
-        Returns an author with a given ID.
+        Returns book with a given ID.
         """
         return Book.query.filter(Book.id == id).one()
 
     @api.expect(book)
-    @api.response(204, 'Category successfully updated.')
+    @api.response(204, 'Book successfully updated.')
     def put(self, id):
         """
-        Updates an author.
+        Updates a book.
 
-        Use this method to change the name of an author.
+        Use this method to change the data of the book.
 
-        * Send a JSON object with the new name in the request body.
+        * Send a JSON object with the new data in the request body.
 
         ```
         {
@@ -81,7 +81,7 @@ class BookItem(Resource):
     @api.response(204, 'Book successfully deleted.')
     def delete(self, id):
         """
-        Deletes an author.
+        Deletes a book.
         """
         delete_book(id)
         return None, 204
