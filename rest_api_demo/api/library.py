@@ -36,7 +36,7 @@ class BooksAuthorSearchCollection(Resource):
     @api.marshal_list_with(page_of_books)
     def get(self, name):
         """
-        Returns list of books in the library by author last name
+        Returns list of books in the library by author name (first name + last name)
         """
 
         args = pagination_arguments.parse_args(request)
