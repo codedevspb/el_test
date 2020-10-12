@@ -1,0 +1,4 @@
+flask
+flask_restx
+Flask-SQLAlchemy==2.1
+
