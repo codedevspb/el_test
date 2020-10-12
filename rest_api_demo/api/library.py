@@ -10,7 +10,7 @@ from rest_api_demo.library.models import Book, Author
 
 log = logging.getLogger(__name__)
 
-ns = api.namespace('library', description='Operations related to books')
+ns = api.namespace('library', description='Operations related to library (search-by- queries)')
 
 
 @ns.route('/books/title/<string:title>')
